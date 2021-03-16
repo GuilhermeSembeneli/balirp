@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>Home Pull</div>;
+  return <div>Bali RP</div>;
 }
