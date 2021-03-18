@@ -1,19 +1,21 @@
-import React from "react";
+import { GlobalStyle } from "./styles/global";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./components/Home/Home";
+import Home from "./components/Home";
 
 export const routes_app = {
-  home: '/',
-  cadastro: '/cadastro'
-}
+  home: "/",
+  login: "/login",
+};
+
 export function App() {
   return (
-    <Router>
-      <div className="App">
+    <>
+      <GlobalStyle />
+      <Router>
         <Switch>
-          <Route path={routes_app.home} component={Home}/>
+          <Route path={routes_app.home} component={Home} />
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </>
   );
 }
