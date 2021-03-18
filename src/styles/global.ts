@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1,h2,h3,h4,h5,h6{
-        font-weight: 600;
+        font-weight: 700;
     }
 
     button: {
@@ -39,5 +39,4 @@ export const GlobalStyle = createGlobalStyle`
         opacity: .6;
         cursor: not-allowed;
     }
-
 `;
