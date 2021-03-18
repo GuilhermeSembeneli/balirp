@@ -1,7 +1,7 @@
 import React from "react";
 import { ContainerBaliHistory } from "./style";
 import bannerImg from '../../assets/bannerterste.png'
-export default function BaliHistory() {
+export function BaliHistory() {
   return (
     <ContainerBaliHistory>
       <div className="section-text">
