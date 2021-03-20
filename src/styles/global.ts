@@ -40,5 +40,4 @@ export const GlobalStyle = createGlobalStyle`
         cursor: not-allowed;
     }
 
-
 `;

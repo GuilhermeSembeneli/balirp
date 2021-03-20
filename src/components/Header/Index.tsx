@@ -7,7 +7,7 @@ import { routes_app } from "../../App";
 export function Header({link, text}: HeaderProps) {
   return (
     <Container>
-      <div className="divFlex">
+      <div className="divFlex" id="header">
         <div>
           <Link to={routes_app.home}>
             <img src={baliLogo} alt="Logo servidor baliRoleplay" />
