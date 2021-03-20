@@ -1,5 +1,7 @@
-import React from "react";
+
 import { ContainerVip } from "./style";
+
+
 export default function BaliInfoVIp() {
   return (
     <section>

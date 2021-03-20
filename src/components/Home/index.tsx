@@ -3,6 +3,7 @@ import { routes_app } from "../../App";
 import { Header } from "../Header/Index";
 import {BaliHistory} from "./BaliHistory";
 import BaliInfoVIp from "./BaliInfoVIp";
+import BaliVip from "./BaliVip";
 import {BaliWave} from "./BaliWave";
 import { Container } from "./style";
 
@@ -14,6 +15,7 @@ export default function Home() {
         <BaliHistory />
         <BaliWave/>
         <BaliInfoVIp/>
+        <BaliVip/>
       </Container>
     </>
   );
