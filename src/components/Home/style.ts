@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import backgroundImg from '../../assets/wave.svg';
+import backgroundImg from "../../assets/wave.svg";
 
 export const Container = styled.main`
   section {
@@ -132,4 +132,55 @@ export const ContainerWave = styled.section`
       transform: translateY(15px);
     }
   }
+`;
+
+export const ContainerVip = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    b {
+      color: rgb(245, 125, 125);
+    }
+  }
+
+
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card-item{
+      width: 360px;
+      margin-top: 2.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      
+      h2{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #df766e;
+      }
+      
+      p{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
+`;
+
+export const BoxContainer = styled.section`
+
+`;
+export const ContainerItem = styled.div`
 `;
