@@ -1,6 +1,7 @@
 import { GlobalStyle } from "./styles/global";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
+import Footer from "./components/Footer";
 
 export const routes_app = {
   home: "/",
@@ -16,6 +17,7 @@ export function App() {
           <Route path={routes_app.home} component={Home} />
         </Switch>
       </Router>
+      <Footer/>
     </>
   );
 }
