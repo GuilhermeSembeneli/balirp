@@ -86,7 +86,7 @@ export const ContainerWave = styled.section`
         }
       }
 
-      a {
+      .href {
         position: absolute;
         z-index: 9999;
         margin-left: 9rem;
@@ -101,6 +101,7 @@ export const ContainerWave = styled.section`
         border-radius: 5px;
         border: 2px solid;
         transition: all 150ms linear 0.1s;
+        cursor: pointer;
         &::hover {
           background-color: #fff;
           color: rgb(255, 107, 107);
@@ -148,13 +149,12 @@ export const ContainerVip = styled.div`
     }
   }
 
-
   .card {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .card-item{
+    .card-item {
       width: 360px;
       margin-top: 2.2rem;
       display: flex;
@@ -162,15 +162,14 @@ export const ContainerVip = styled.div`
       align-items: center;
       flex-direction: column;
 
-      
-      h2{
+      h2 {
         margin: 0;
         padding: 0;
         text-align: center;
         color: #df766e;
       }
-      
-      p{
+
+      p {
         margin: 0;
         padding: 0;
         text-align: center;
@@ -180,7 +179,71 @@ export const ContainerVip = styled.div`
 `;
 
 export const BoxContainer = styled.section`
+  padding: 40px 0px;
+  position: relative;
+  background: none;
+  width: 100%;
+  background: linear-gradient(to right, #e05656, #f04438);
 
+  .container {
+    width: 90%;
+    max-width: 1080px;
+    margin: auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
+
 export const ContainerItem = styled.div`
+  background: #FFFF;
+  border-radius: 0.325rem;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    color: #df766e;
+  }
+
+  a {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #e28680;
+    background-color: #c7332800;
+    padding: 8px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid;
+    transition: all 150ms linear 0.1s;
+    margin-bottom: 0.210rem;
+
+    &:hover {
+      background-color: #df766e;
+      color: white;
+    }
+  }
+
+  ul {
+    padding: 5px;
+    li {
+      p{
+        font-size: 1.2rem;
+      }
+      
+      color: #7c7c7c;
+      list-style: none;
+      text-align: center;
+    }
+  }
+
+  .vip-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 `;

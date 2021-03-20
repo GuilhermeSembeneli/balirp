@@ -40,10 +40,5 @@ export const GlobalStyle = createGlobalStyle`
         cursor: not-allowed;
     }
 
-    .container{
-        width: 90%;
-        max-width: 980px;
-        margin: auto;
-        display: flex;
-    }
+
 `;
