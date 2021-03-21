@@ -1,4 +1,5 @@
 export interface HeaderProps{
-    link: string;
+    link?: string;
+    linkHref?: string;
     text: string;
 }

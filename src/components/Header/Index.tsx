@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import { HeaderProps } from "../../interface";
 import { routes_app } from "../../App";
 
-export function Header({link, text}: HeaderProps) {
+export function Header({link, text, linkHref}: HeaderProps) {
   return (
     <Container>
       <div className="divFlex" id="header">
@@ -16,7 +16,10 @@ export function Header({link, text}: HeaderProps) {
         <nav>
           <ul>
             <li>
-              <NavLink to={link}> {text} </NavLink>
+              {link ? 
+              <NavLink to={link}> {text} </NavLink> :
+              <a href={linkHref}> {text} </a>  
+            }
             </li>
           </ul>
         </nav>

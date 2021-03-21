@@ -2,7 +2,6 @@ import { GlobalStyle } from "./styles/global";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
-import { Header } from "./components/Header/Index";
 import { Login } from "./components/Login";
 
 
@@ -16,7 +15,6 @@ export function App() {
     <>
       <GlobalStyle />
       <Router>
-        <Header link={routes_app.login} text="Login" />
         <Switch>
           <Route path={routes_app.login} component={Login} />
           <Route path={routes_app.home} component={Home} />
