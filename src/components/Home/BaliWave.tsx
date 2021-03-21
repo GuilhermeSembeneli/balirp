@@ -17,7 +17,7 @@ export function BaliWave() {
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={1200}
           >
             Quero ver!
           </LinkScroll>
