@@ -4,7 +4,10 @@ import { Link as LinkScroll } from "react-scroll";
 export default function Footer() {
   return (
     <Container>
-      <img src={footerImg} alt="Foto do servidor balirp" />
+      <a href="https://discord.gg/balirp" target="_blank" rel="noreferrer">
+        <img src={footerImg} alt="Foto do servidor balirp" />
+      </a>
+      
       <div>
         <p>Venha criar a sua história!</p>
         <span>Duvida? Entre no discord e abra um ticket.</span>
