@@ -30,8 +30,8 @@ export const Container = styled.footer`
         border: none;
         border-radius: 100%;
         padding: 1rem;
-        width: 2rem;
-        height: 2rem;
+        width: 1rem;
+        height: 1rem;
         display: flex;
         align-items: center;
         justify-content: center;
