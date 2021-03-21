@@ -1,10 +1,14 @@
-import { Header } from "../Header/Index";
+import { Header } from "../Header";
 import { Container, FormLogin } from "./style";
 import LoginImg from "../../assets/logobali.png";
+import Title from "../Title";
+import { Link } from "react-router-dom";
+import { routes_app } from "../../App";
 
 export function Login() {
   return (
     <>
+     <Title title="Login"/>
       <Header linkHref="https://discord.gg/balirp" text="Discord" />
       <Container>
         <div className="box-login">
@@ -21,7 +25,7 @@ export function Login() {
               <label>Password</label>
             </div>
             <button type="submit">Entrar</button>
-            <a>Não possui uma conta?</a>
+            <Link to={routes_app.cadastro}>Não possui uma conta?</Link>
           </FormLogin>
         </div>
       </Container>
