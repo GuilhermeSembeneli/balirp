@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/react-scroll": "^1.8.2",
+    "@types/react-toastify": "^4.1.0",
     "@types/styled-components": "^5.1.9",
     "axios": "^0.21.1",
     "react": "^17.0.1",

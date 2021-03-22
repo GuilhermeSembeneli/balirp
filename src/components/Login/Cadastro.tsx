@@ -7,20 +7,30 @@ import { api } from "../../services/api";
 import React from "react";
 import { useStorage } from "../../hooks/useStorage";
 import useForm from "../../hooks/useForm";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function Cadastro() {
-  const email = useForm('email')
-  const password = useForm('password')
+  const email = useForm("email");
+  const username = useForm();
+  const password = useForm("password");
   const { setStorage } = useStorage("balirp:token", "");
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    const {
-      data: {content}
-    } = await api.post("createuser", {
-      email: email.value,
-      password: password.value,
-    });
+
+    email.error && toast.error(email.error);
+    password.error && toast.error(password.error);
+    console.log(password.value)
+    if (!email.error && !password.error) {
+      const {
+        data: { content },
+      } = await api.post("createuser", {
+        email: email.value,
+        password: password.value,
+      });
+      setStorage(content.token);
+    }
   }
   return (
     <>
@@ -36,7 +46,9 @@ export function Cadastro() {
                 id="user"
                 placeholder=" "
                 type="text"
-                {...email}
+                value={email.value}
+                onChange={email.onChange}
+                onBlur={email.onBlur}
               />
               <label>Email</label>
             </div>
@@ -46,7 +58,9 @@ export function Cadastro() {
                 id="pass"
                 placeholder=" "
                 type="password"
-                {...password}
+                value={password.value}
+                onChange={password.onChange}
+                onBlur={password.onBlur}
               />
               <label>Password</label>
             </div>

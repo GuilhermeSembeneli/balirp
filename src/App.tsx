@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import { Login } from "./components/Login";
 import { Cadastro } from "./components/Login/Cadastro";
-
+import { ToastContainer } from "react-toastify";
 
 
 export const routes_app = {
@@ -23,7 +23,8 @@ export function App() {
           <Route path={routes_app.cadastro} component={Cadastro} />
           <Route path={routes_app.home} component={Home} />
         </Switch>
-        <Footer/>
+        <Footer />
+        <ToastContainer/>
       </Router>
     </>
   );
