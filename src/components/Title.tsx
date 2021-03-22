@@ -1,5 +1,6 @@
 import React from "react";
-import {TitleProps} from '../interface/types'
+import { TitleProps } from "../../types";
+
 
 export default function Title({ title} : TitleProps) {
   React.useEffect(() => {

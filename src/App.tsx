@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import { Login } from "./components/Login";
-import { Cadastro } from "./components/Cadastro";
+import { Cadastro } from "./components/Login/Cadastro";
+
 
 
 export const routes_app = {
