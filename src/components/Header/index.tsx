@@ -1,7 +1,7 @@
 import { Container } from "./style";
 import baliLogo from "../../assets/logobali.png";
 import { NavLink, Link } from "react-router-dom";
-import { HeaderProps } from "../../interface";
+import { HeaderProps } from "../../interface/types";
 import { routes_app } from "../../App";
 
 export function Header({link, text, linkHref}: HeaderProps) {
