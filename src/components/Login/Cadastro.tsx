@@ -2,32 +2,31 @@ import { Header } from "../Header";
 import { Container, FormLogin } from "./style";
 import LoginImg from "../../assets/logobali.png";
 import Title from "../Title";
-import { Link } from "react-router-dom";
 import { routes_app } from "../../App";
 import { api } from "../../services/api";
 import React from "react";
 import { useStorage } from "../../hooks/useStorage";
 
-export function Login() {
+export function Cadastro() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const { setStorage } = useStorage("balirp:token", "");
 
+  
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     const {
-      data: { data },
-    } = await api.post("login", {
+      data: {content}
+    } = await api.post("createuser", {
       email,
       password,
     });
-    setStorage(data.token);
   }
 
   return (
     <>
-      <Title title="Login" />
-      <Header linkHref="https://discord.gg/balirp" text="Discord" />
+      <Title title="Cadastro" />
+      <Header link={routes_app.login} text="Login" />
       <Container>
         <div className="box-login">
           <img src={LoginImg} alt="Logo do servidor do bali" />
@@ -54,8 +53,7 @@ export function Login() {
               />
               <label>Password</label>
             </div>
-            <button type="submit">Entrar</button>
-            <Link to={routes_app.cadastro}>Não possui uma conta?</Link>
+            <button type="submit">Cadastrar</button>
           </FormLogin>
         </div>
       </Container>
