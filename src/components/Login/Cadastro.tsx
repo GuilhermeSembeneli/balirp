@@ -6,23 +6,22 @@ import { routes_app } from "../../App";
 import { api } from "../../services/api";
 import React from "react";
 import { useStorage } from "../../hooks/useStorage";
+import useForm from "../../hooks/useForm";
 
 export function Cadastro() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const email = useForm('email')
+  const password = useForm('password')
   const { setStorage } = useStorage("balirp:token", "");
 
-  
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     const {
       data: {content}
     } = await api.post("createuser", {
-      email,
-      password,
+      email: email.value,
+      password: password.value,
     });
   }
-
   return (
     <>
       <Title title="Cadastro" />
@@ -37,8 +36,7 @@ export function Cadastro() {
                 id="user"
                 placeholder=" "
                 type="text"
-                value={email}
-                onChange={({ target }) => setEmail(target.value)}
+                {...email}
               />
               <label>Email</label>
             </div>
@@ -48,8 +46,7 @@ export function Cadastro() {
                 id="pass"
                 placeholder=" "
                 type="password"
-                value={password}
-                onChange={({ target }) => setPassword(target.value)}
+                {...password}
               />
               <label>Password</label>
             </div>
