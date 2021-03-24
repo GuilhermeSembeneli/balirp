@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+interface ContainerProps{
+  container: string;
+
+}
+
+export const Container = styled.main<ContainerProps>`
   font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
@@ -21,16 +26,22 @@ export const Container = styled.main`
 
     img {
       width: 530px;
-      margin-top: -105px;
+      margin-top: ${props => (
+        props.container === 'login' ? '-105px' : '-86px'
+      )} 
     }
   }
 `;
-export const FormLogin = styled.form`
+
+export const FormLogin = styled.form<ContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 25px;
+  margin-top: ${props => (
+    props.container === 'login' ? '25px' : '-8px'
+  )
+  };
 
   .material-textfield {
     position: relative;
