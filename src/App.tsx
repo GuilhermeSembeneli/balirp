@@ -21,18 +21,20 @@ export function App() {
         <Switch>
           <Route path={routes_app.home} exact>
             <Home />
+            <Footer />
           </Route>
           <Route path={routes_app.login} exact>
             <Login />
+            <Footer />
           </Route>
           <Route path={routes_app.cadastro} exact>
             <Cadastro />
+            <Footer />
           </Route>
           <Route path="*">
             <NotFound />
           </Route>
         </Switch>
-        <Footer />
         <ToastContainer />
       </Router>
     </>
