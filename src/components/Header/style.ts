@@ -34,6 +34,26 @@ export const Container = styled.header`
         border-radius: 0.313rem;
         border: 0.125rem solid;
         transition: all 150ms linear 0.1s;
+        cursor: pointer;
+        
+        &:hover {
+          background-color: #df766e;
+          color: white;
+        }
+      }
+
+      span {
+        display: inline-block;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #e28680;
+        background-color: #c7332800;
+        padding: 8px 24px;
+        text-decoration: none;
+        border-radius: 0.313rem;
+        border: 0.125rem solid;
+        transition: all 150ms linear 0.1s;
+        cursor: pointer;
 
         &:hover {
           background-color: #df766e;
