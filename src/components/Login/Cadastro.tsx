@@ -9,12 +9,14 @@ import { useStorage } from "../../hooks/useStorage";
 import useForm from "../../hooks/useForm";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useHistory } from "react-router";
 
 export function Cadastro() {
   const email = useForm("email");
   const username = useForm();
   const password = useForm("password");
   const { setStorage } = useStorage("balirp:token", "");
+  const history = useHistory();
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -22,13 +24,22 @@ export function Cadastro() {
     email.error && toast.error(email.error);
     password.error && toast.error(password.error);
 
+    if (email.value === "" || password.value === "" || username.value === "") {
+      toast.error("Preencha os dados corretamente");
+      return;
+    }
+
     if (!email.error && !password.error) {
-      const { data: {user} } = await api.post("createuser", {
+      const {
+        data: { user },
+      } = await api.post("createuser", {
         email: email.value,
         password: password.value,
         username: username.value,
       });
+      toast.success("Conta criada com sucesso!");
       setStorage(user.token);
+      history.push(routes_app.login);
     }
   }
   return (

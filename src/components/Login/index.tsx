@@ -7,6 +7,8 @@ import { routes_app } from "../../App";
 import { api } from "../../services/api";
 import React from "react";
 import { useStorage } from "../../hooks/useStorage";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function Login() {
   const [email, setEmail] = React.useState("");
@@ -15,13 +17,20 @@ export function Login() {
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
+
+    if (email === "" || password === "") {
+      toast.error("Preencha os dados corretamente");
+      return;
+    }
+
     const {
-      data: { user },
+      data: { data },
     } = await api.post("login", {
       email,
       password,
     });
-    setStorage(user.token);
+    console.log(data);
+    setStorage(data.token);
   }
 
   return (
