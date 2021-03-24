@@ -1,10 +1,10 @@
 import { Container } from "./style";
 import baliLogo from "../../assets/logobali.png";
 import { NavLink, Link } from "react-router-dom";
-import { HeaderProps } from "../../interface";
 import { routes_app } from "../../App";
+import { HeaderProps } from "../../../types";
 
-export function Header({link, text, linkHref}: HeaderProps) {
+export function Header({ link, text, linkHref, onClick }: HeaderProps) {
   return (
     <Container>
       <div className="divFlex" id="header">
@@ -16,10 +16,10 @@ export function Header({link, text, linkHref}: HeaderProps) {
         <nav>
           <ul>
             <li>
-              {link ? 
-              <NavLink to={link}> {text} </NavLink> :
-              <a href={linkHref}> {text} </a>  
-            }
+              {link && <NavLink to={link}> {text} </NavLink>}
+
+              {linkHref && <a href={linkHref}> {text} </a>}
+              {!linkHref  && !link && <span onClick={onClick}> {text} </span>}
             </li>
           </ul>
         </nav>

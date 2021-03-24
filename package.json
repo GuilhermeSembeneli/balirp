@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/react-scroll": "^1.8.2",
+    "@types/react-toastify": "^4.1.0",
     "@types/styled-components": "^5.1.9",
+    "axios": "^0.21.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.2",
+    "react-toastify": "^7.0.3",
     "styled-components": "^5.2.1",
     "web-vitals": "^1.0.1"
   },
