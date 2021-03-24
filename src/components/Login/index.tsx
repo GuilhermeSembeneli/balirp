@@ -16,12 +16,12 @@ export function Login() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     const {
-      data: { data },
+      data: { user },
     } = await api.post("login", {
       email,
       password,
     });
-    setStorage(data.token);
+    setStorage(user.token);
   }
 
   return (

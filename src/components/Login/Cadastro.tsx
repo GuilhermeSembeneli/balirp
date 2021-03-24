@@ -21,15 +21,14 @@ export function Cadastro() {
 
     email.error && toast.error(email.error);
     password.error && toast.error(password.error);
-    console.log(password.value)
+
     if (!email.error && !password.error) {
-      const {
-        data: { content },
-      } = await api.post("createuser", {
+      const { data: {user} } = await api.post("createuser", {
         email: email.value,
         password: password.value,
+        username: username.value,
       });
-      setStorage(content.token);
+      setStorage(user.token);
     }
   }
   return (
@@ -44,6 +43,18 @@ export function Cadastro() {
             <div className="material-textfield">
               <input
                 id="user"
+                placeholder=" "
+                type="text"
+                value={username.value}
+                onChange={username.onChange}
+                onBlur={username.onBlur}
+              />
+              <label>Usuario</label>
+            </div>
+
+            <div className="material-textfield">
+              <input
+                id="email"
                 placeholder=" "
                 type="text"
                 value={email.value}
