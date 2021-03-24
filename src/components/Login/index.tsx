@@ -37,11 +37,11 @@ export function Login() {
     <>
       <Title title="Login" />
       <Header linkHref="https://discord.gg/balirp" text="Discord" />
-      <Container>
+      <Container container="login">
         <div className="box-login">
           <img src={LoginImg} alt="Logo do servidor do bali" />
 
-          <FormLogin onSubmit={handleSubmit}>
+          <FormLogin onSubmit={handleSubmit} container='login'>
             <div className="material-textfield">
               <input
                 id="user"

@@ -46,11 +46,11 @@ export function Cadastro() {
     <>
       <Title title="Cadastro" />
       <Header link={routes_app.login} text="Login" />
-      <Container>
+      <Container container='cadastro'>
         <div className="box-login">
           <img src={LoginImg} alt="Logo do servidor do bali" />
 
-          <FormLogin onSubmit={handleSubmit}>
+          <FormLogin onSubmit={handleSubmit} container='cadastro'>
             <div className="material-textfield">
               <input
                 id="user"
